@@ -1,0 +1,75 @@
+:root {
+    --menu-bar-width: 60px;
+    --menu-bar-height: 10px;
+}
+
+#menu {
+    background-color: darkslateblue;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    margin: 100px;
+}
+
+#menu::before,
+#menu::after {
+    background-color: darkslateblue;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+}
+
+#menu::before {
+    left: 0;
+    top: -15px;
+}
+
+#menu::after {
+    left: 0;
+    top: 15px;
+}
+
+.triangle-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+#triangle1 {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid darkslateblue;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+#triangle2 {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid darkslateblue;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+#triangle3 {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid darkslateblue;
+}
+
+#triangle4 {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid darkslateblue;
+    border-top: 20px solid transparent;
+}
