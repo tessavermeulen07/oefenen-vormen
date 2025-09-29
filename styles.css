@@ -31,11 +31,65 @@
     top: 15px;
 }
 
+#container-hamburger {
+    /*border: 2px dashed deeppink;*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+
+    /*padding: 20px 0;*/
+}
+
+#container-hamburger:hover #menu1 {
+    background-color: transparent;
+}
+
+#container-hamburger:hover #menu1::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container-hamburger:hover #menu1::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+#menu1 {
+    background-color: darkslateblue;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+}
+
+#menu1::before,
+#menu1::after {
+    background-color: darkslateblue;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+}
+
+#menu1::before {
+    left: 0;
+    top: -15px;
+}
+
+#menu1::after {
+    left: 0;
+    top: 15px;
+}
+
 .triangle-flex {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
+    padding: 50px;
 }
 
 #triangle1 {
@@ -72,4 +126,75 @@
     border-left: 20px solid transparent;
     border-right: 20px solid darkslateblue;
     border-top: 20px solid transparent;
+}
+
+.display {
+    padding: 20px;
+}
+
+.one {
+    display: inline;
+    background-color: darkslateblue;
+    color: white;
+}
+
+.two {
+    display: block;
+    background-color: darkslateblue;
+    color: white;
+}
+
+.three {
+    display: inline-block;
+    background-color: darkslateblue;
+    color: white;
+}
+
+.praatwolkje {
+    padding: 20px;
+}
+
+.praatwolkje > div {
+    width: 150px;
+    height: 80px;
+    background-color: darkslateblue;
+    border-radius: 15px;
+    position: relative;
+}
+
+.praatwolkje > div::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 20px solid darkslateblue;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    left: -20px;
+    top: 26px;
+}
+
+.animation-link {
+    width: 27%;
+}
+
+a, a:link, a:visited {
+    font-family: Helvetica, sans-serif;
+    font-size: 50px;
+    color: darkslateblue;
+    text-decoration: none;
+}
+
+a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 5px;
+    background-color: darkslateblue;
+    transition: width .35s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
 }
